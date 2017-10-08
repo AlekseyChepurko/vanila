@@ -66,7 +66,7 @@ class ItemsService {
   };
 
   reducer = (action) => {
-    if (process.env !== 'production') logger(action);
+    if (process.env.NODE_ENV !== 'production') logger(action);
     switch (action.type) {
       case ADD_ITEM: {
         this.items = [action.payload, ...this.items];
