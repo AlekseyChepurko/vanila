@@ -1,7 +1,29 @@
-import Some from './cla';
+import { Observable } from 'rxjs';
+import { dataService, itemsService } from './services';
+import renderElements from './lib/rednerElements';
+import '../styles/main.css';
 
-Some.sayHello();
+const root = document.querySelector('#root');
+dataService.data
+  .subscribe(items => {
+    itemsService.addItems(items);
+  });
 
-const a = new Some();
-console.log(a.getParams());
-console.log(a.getParams());
+itemsService.data.items
+  .subscribe(() => {
+    itemsService.getNextActiveItems();
+  });
+
+itemsService.data.activeItems
+  .subscribe(items => {
+    renderElements(items, root);
+  });
+
+const button = document.querySelector('#add_button');
+const loadObs = Observable.fromEvent(button, 'click');
+loadObs
+  .debounceTime(200)
+  .subscribe(() => {
+    itemsService.getNextActiveItems();
+  });
+
