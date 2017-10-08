@@ -6,6 +6,7 @@ import '../styles/main.css';
 const root = document.querySelector('#root');
 dataService.data
   .subscribe(items => {
+    root.innerHTML = '';
     itemsService.addItems(items);
   });
 
