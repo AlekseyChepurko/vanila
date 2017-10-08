@@ -20,7 +20,7 @@ itemsService.data.activeItems
     renderElements(items, root);
   });
 
-const button = document.querySelector('#add_button');
+const button = document.querySelector('#load_button');
 const loadObs = Observable.fromEvent(button, 'click');
 loadObs
   .debounceTime(200)

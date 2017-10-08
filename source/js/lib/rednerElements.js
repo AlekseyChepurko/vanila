@@ -3,14 +3,16 @@ import { itemsService } from '../services/service-items';
 
 const renderElement = (element) => {
   const res = document.createElement('li');
+  res.style = `background-image: url(${ element.imageUrl })`;
   res.setAttribute('class', 'item-wrap');
 
-  const id = document.createElement('span');
-  id.innerText = element.id;
+  const name = document.createElement('p');
+  name.setAttribute('class', 'item__name');
+  name.innerText = element.name;
 
-  const image = document.createElement('img');
-  image.setAttribute('src', element.imageUrl);
-  image.setAttribute('class', 'item__image');
+  const text = document.createElement('p');
+  text.setAttribute('class', 'item__text');
+  text.innerText = element.text;
 
   const deleteButton = document.createElement('button');
   deleteButton.setAttribute('class', 'item__delete-button');
@@ -21,10 +23,14 @@ const renderElement = (element) => {
     res.remove();
   });
 
+  const hoverInfo = document.createElement('div');
+  hoverInfo.setAttribute('class', 'item__hover-info');
+  hoverInfo.appendChild(text);
+  hoverInfo.appendChild(deleteButton);
+
   res.setAttribute('key', element.id);
-  res.appendChild(id);
-  res.appendChild(image);
-  res.appendChild(deleteButton);
+  res.appendChild(name);
+  res.appendChild(hoverInfo);
 
   return res;
 };
