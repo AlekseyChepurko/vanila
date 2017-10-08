@@ -1,3 +1,5 @@
+@import url('./item.css');
+
 ul, li, p {
     list-style: none;
     margin: 0;
@@ -14,10 +16,22 @@ body {
     }
 }
 
+button {
+    display: block;
+    margin: auto;
+    border: 0;
+    padding: .5rem .8rem;
+    background: #1C85AC;
+    color: white;
+    text-transform: uppercase;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
 #root {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
-@import url('./item.css');

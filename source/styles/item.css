@@ -70,15 +70,5 @@
 }
 
 .item__delete-button {
-    display: block;
-    margin: auto;
-    border: 0;
-    padding: 5px 10px;
-    background: #1C85AC;
-    color: white;
-    text-transform: uppercase;
-}
-
-.item__delete-button:hover {
-    cursor: pointer;
+    padding: .4rem .65rem;
 }
