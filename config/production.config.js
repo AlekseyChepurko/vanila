@@ -35,7 +35,7 @@ module.exports = function (options) {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: 'css-loader?importLoader=1&modules&localIdentName=[local]!import-glob-loader',
+        use: 'css-loader?importLoader=1&modules&localIdentName=[local]!postcss-loader!import-glob-loader',
       }),
     },
   ];

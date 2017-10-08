@@ -20,6 +20,7 @@ module.exports = function (options) {
       use: [
         'style-loader',
         'css-loader?importLoader=1&modules&localIdentName=[local]',
+        'postcss-loader',
         'import-glob-loader',
       ],
     },
