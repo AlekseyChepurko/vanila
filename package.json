@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf build",
-    "build": "webpack -p",
+    "build": "cross-env NODE_ENV=production webpack -p",
     "start": "webpack-dev-server",
     "lint": "eslint ./source",
     "lint:fix": "eslint ./source --fix"
@@ -40,6 +40,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
     "i": "^0.3.6",
