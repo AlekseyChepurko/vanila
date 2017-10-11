@@ -13,7 +13,7 @@ Has 3 configuration files
 
 Project is written with VanilaJS and [RxJS](https://github.com/Reactive-Extensions/RxJS)
 
-File [source/env,js](./source/env,js) description:
+File [source/env.js](./source/env.js) description:
 * serviceURLs contains all endpoints for data fetching. Services may have parametric URLs like http://service.com/endpoint/%parameter%/
 *       getData(serviceName: string, parameters: object): promise
     in case of parametric service url parameters object passes
@@ -38,13 +38,13 @@ Main js file is [source/js/app.js](./source/js/app.js)
     
         getNextActiveItems (count = 4 : number) : void
         
-        addItems (items \<object>): void
+        addItems (items <object>): void
     
         removeActiveItem (id: string) : void
     
 #### Renderer
 
-[source/js/lib/renderElements.js](./source/js/lib/renderElements.js)
+[source/js/lib/renderElements.js](./source/js/lib/rednerElements.js)
 
     renderElements(elements <object>, dist: HTMLElement): void
 
